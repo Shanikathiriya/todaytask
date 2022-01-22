@@ -13,19 +13,16 @@ public class AdditonStepDef
       public void when_passed(int number)
 
       {
-          String str1 = String.valueOf(number);
-          String str2=str1.substring(1);
 
-                 int number1= Integer.parseInt(str2);
 
-          while(number1 > 0)
+          while(number > 0)
           {
 
-              digit = number1 % 10;
+              digit = number % 10;
 
               sum = sum + digit;
 
-              number1 = number1 / 10;
+              number= number / 10;
           }
 
    }
@@ -41,13 +38,19 @@ public class AdditonStepDef
 
     @Given("when passed the  {int}")
     public void when_passed_the(Integer number) {
-        while (number > 0) {
 
-            digit = number % 10;
+        String str1 = String.valueOf(number);
+        String str2=str1.substring(1);
+        System.out.println(str2);
+
+        int number1= Integer.parseInt(str2);
+        while (number1 > 0) {
+
+            digit = number1 % 10;
 
             sum = sum + digit;
 
-            number = number / 10;
+            number1 = number1 / 10;
 
         }
     }
